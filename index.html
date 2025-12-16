@@ -3,196 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پکیج برادران ملش</title>
+    <meta name="description" content="پکیج برادران ملش - عضویت رسمی با تضمین موفقیت">
+    <title>پکیج برادران ملش | نسخه نهایی VIP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
-        
-        body { 
-            font-family: 'Vazirmatn', Tahoma, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: linear-gradient(to bottom, #f0f4ff, #d9e2ff); 
-            min-height: 100vh;
-            color: #333;
+        :root {
+            --gold: #ffd700;
+            --gold-dark: #ccac00;
+            --primary: #0d001f;
+            --secondary: #1a0040;
+            --glass: rgba(255, 255, 255, 0.09);
+            --text: #f0f0ff;
+            --shadow: 0 20px 40px rgba(0,0,0,0.4);
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .container { 
-            max-width: 950px; 
-            margin: 30px auto; 
-            background: white; 
-            border-radius: 25px; 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2); 
-            overflow: hidden; 
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            margin: 0;
+            line-height: 1.8;
         }
-        header { 
-            background: linear-gradient(rgba(102,126,234,0.8), rgba(118,75,162,0.8)), url('http://unfocussed.com/cdn/shop/articles/The_Artisan_s_Mythos_3147c17d-5ef8-4993-80af-5721dbc57848.png?v=1710881679'); 
-            background-size: cover; 
-            background-position: center; 
-            color: white; 
-            padding: 80px 20px; 
-            text-align: center; 
+
+        .container { max-width: 1300px; margin: 0 auto; padding: clamp(20px, 5vw, 60px); }
+
+        header {
+            text-align: center;
+            padding: clamp(120px, 15vh, 220px) 20px 100px;
+            background: linear-gradient(to bottom, rgba(13,0,31,0.9), transparent);
         }
-        header h1 { margin: 0; font-size: 3.5em; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        header p { font-size: 1.6em; text-shadow: 0 2px 10px rgba(0,0,0,0.4); }
-        
-        section { padding: 50px 40px; border-bottom: 1px solid #eee; }
-        section:last-child { border-bottom: none; }
-        h2 { 
-            color: #764ba2; 
-            font-size: 2.4em;
-            border-right: 6px solid gold; 
-            padding-right: 20px; 
-            margin-bottom: 30px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        h1 {
+            font-size: clamp(3.5rem, 9vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--gold), #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 8px 30px rgba(255,215,0,0.4);
         }
-        
-        .form-group { margin: 30px 0; }
-        label { display: block; margin-bottom: 12px; font-weight: 700; font-size: 1.2em; color: #555; }
-        input[type="text"], input[type="date"] { 
-            width: 100%; 
-            padding: 18px; 
-            border: 2px solid #ccc; 
-            border-radius: 15px; 
-            font-size: 1.2em; 
-            transition: all 0.4s;
-            background: #f9f9f9;
+        header p { font-size: clamp(1.5rem, 4vw, 2.3rem); margin-top: 30px; }
+
+        .highlight {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 50px;
+            background: var(--glass);
+            border: 3px double var(--gold);
+            border-radius: 40px;
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            backdrop-filter: blur(18px);
+            box-shadow: var(--shadow);
         }
-        input:focus { 
-            border-color: gold; 
-            box-shadow: 0 0 20px rgba(255,215,0,0.4); 
+
+        .section-title {
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            text-align: center;
+            margin: 100px 0 70px;
+            color: var(--gold);
         }
-        
-        .highlight { 
-            background: linear-gradient(135deg, #ffd700, #ffb347); 
-            padding: 40px; 
-            border-radius: 20px; 
-            text-align: center; 
-            font-size: 1.8em; 
-            font-weight: 900; 
-            color: #8b4513; 
-            box-shadow: 0 10px 30px rgba(255,215,0,0.4);
-            animation: glow 2s infinite alternate;
-        }
-        @keyframes glow { from { box-shadow: 0 10px 30px rgba(255,215,0,0.4); } to { box-shadow: 0 15px 40px rgba(255,215,0,0.6); } }
-        
-        .teachers { 
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 40px; 
-        }
-        .teacher { 
-            text-align: center; 
-            background: white; 
-            padding: 20px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s;
-        }
-        .teacher:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .teacher img { width: 150px; height: 150px; border-radius: 50%; border: 5px solid gold; object-fit: cover; }
-        .teacher p { margin: 15px 0 0; font-size: 1.3em; font-weight: bold; }
-        
-        .address { 
-            background: linear-gradient(135deg, #667eea, #764ba2); 
-            color: white; 
-            padding: 40px; 
-            border-radius: 20px; 
-            text-align: center; 
-            font-size: 1.3em; 
-            box-shadow: 0 10px 30px rgba(102,126,234,0.3);
-        }
-        
-        .membership-card img { 
-            width: 100%; 
-            max-width: 600px; 
-            border-radius: 20px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3); 
-            margin: 20px auto; 
+        .section-title::after {
+            content: '';
             display: block;
+            width: 180px;
+            height: 6px;
+            background: var(--gold);
+            margin: 25px auto 0;
+            border-radius: 3px;
+            box-shadow: 0 0 20px var(--gold);
         }
-        
-        button { 
-            background: linear-gradient(135deg, gold, #ffd700); 
-            color: #8b4513; 
-            padding: 20px 50px; 
-            border: none; 
-            border-radius: 50px; 
-            font-size: 1.6em; 
-            font-weight: bold;
-            cursor: pointer; 
-            box-shadow: 0 10px 30px rgba(255,215,0,0.5);
-            transition: all 0.4s;
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin: 80px 0;
         }
-        button:hover { transform: scale(1.1); box-shadow: 0 20px 40px rgba(255,215,0,0.7); }
-        
-        footer { 
-            background: linear-gradient(135deg, #667eea, #764ba2); 
-            color: white; 
-            text-align: center; 
-            padding: 30px; 
-            font-size: 1.2em;
+        .teacher-card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 35px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
         }
-        
-        /* پیام موفقیت لوکس */
-        #success-message {
+        .teacher-card:hover {
+            transform: translateY(-30px) scale(1.06);
+            box-shadow: 0 40px 80px rgba(255,215,0,0.4);
+        }
+        .teacher-card img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            border: 8px solid var(--gold);
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .teacher-card:hover img { transform: scale(1.15); }
+
+        .register-section {
+            padding: 120px 20px;
+            background: rgba(26,0,64,0.5);
+            border-radius: 50px;
+            margin: 100px 0;
+        }
+        #register-form {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--glass);
+            padding: 60px;
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+        }
+        .form-group { margin: 40px 0; }
+        label { font-size: 1.5rem; display: block; margin-bottom: 15px; }
+        input {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.12);
+            color: white;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+        input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 0 35px rgba(255,215,0,0.5);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 28px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000;
+            border: none;
+            border-radius: 40px;
+            font-size: 2.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 20px 50px rgba(255,215,0,0.6);
+            transition: var(--transition);
+        }
+        .submit-btn:hover { transform: translateY(-12px); box-shadow: 0 30px 70px rgba(255,215,0,0.8); }
+
+        .cards-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 70px;
+            margin: 120px 0;
+        }
+        .cards-gallery img {
+            width: clamp(300px, 40vw, 480px);
+            border-radius: 40px;
+            border: 6px solid var(--gold);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .cards-gallery img:hover { transform: scale(1.15) rotate(6deg); }
+
+        .contact-section {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--glass);
+            border-radius: 50px;
+            margin: 100px auto;
+            max-width: 900px;
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow);
+        }
+        .contact-section h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+        }
+        .contact-section p {
+            font-size: 2rem;
+            margin: 30px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0,0,0,0.6);
+            font-size: 1.4rem;
+        }
+
+        #success-modal {
             display: none;
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.8) url('https://cdn.sanity.io/images/jo7n4k8s/production/45ce5ecf6d26452b917575163097d3d8596e21a5-2400x1260.png?w=1200&h=630&auto=format&dpr=2') center/cover;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
             justify-content: center;
             align-items: center;
             z-index: 1000;
         }
-        .success-box {
-            background: linear-gradient(135deg, white, #f0f0f0);
-            padding: 50px;
-            border-radius: 30px;
+        .success-content {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            padding: 80px;
+            border-radius: 50px;
             text-align: center;
-            max-width: 90%;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.5);
-            border: 5px solid gold;
-            animation: zoomIn 0.8s;
+            border: 8px double var(--gold);
+            box-shadow: 0 0 100px rgba(255,215,0,0.6);
+            animation: pop 0.8s ease;
         }
-        .success-box h2 { color: gold; font-size: 3em; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .success-box p { font-size: 1.6em; margin: 20px 0; color: #333; }
+        @keyframes pop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .success-content h2 { font-size: 5rem; color: var(--gold); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>پکیج برادران ملش</h1>
-            <p>عضویت رسمی و تضمینی در گروه برتر آموزشی</p>
+            <p>عضویت رسمی و تضمینی در گروه برتر</p>
         </header>
 
+        <div class="highlight">
+            🎉 مژده مژده! عضویت در این پکیج رایگان میباشد 🎉
+        </div>
+
         <section>
-            <h2>توضیحات پکیج</h2>
-            <p style="font-size:1.3em; line-height:2;">با عضویت در پکیج برادران ملش، نمره شما به طور تضمینی بالای ۱۸ می‌شود.</p>
-            <p style="font-size:1.3em;">مدرسین برجسته این پکیج:</p>
-            <div class="teachers">
-                <div class="teacher">
-                    <img src="https://fledu.uz/wp-content/uploads/2023/12/photo_2023-12-01_23-12-32-1024x682.jpg" alt="دکتر ارمین علیزاده">
-                    <p>دکتر ارمین علیزاده</p>
+            <h2 class="section-title">مدرسین پکیج</h2>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="دکتر ارمین علیزاده">
+                    <p class="teacher-name">دکتر ارمین علیزاده</p>
                 </div>
-                <div class="teacher">
-                    <img src="https://www.dvc.edu/sites/default/files/styles/4_3_350x262/public/2025-01/Raquel%20Garcia%20838x628.jpg?itok=ytNhF5_-" alt="آیدین هیوه چی">
-                    <p>آیدین هیوه چی</p>
+                <div class="teacher-card">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="آیدین هیوه چی">
+                    <p class="teacher-name">آیدین هیوه چی</p>
                 </div>
-                <div class="teacher">
-                    <img src="https://www.dvc.edu/sites/default/files/2025-08/Persian_Masthead_1264x711.jpg" alt="امیر علی لطفی">
-                    <p>امیر علی لطفی</p>
+                <div class="teacher-card">
+                    <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="امیر علی لطفی">
+                    <p class="teacher-name">امیر علی لطفی</p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <div class="highlight">
-                🎉 مژده مژده! عضویت تا اطلاع ثانوی رایگان میباشد 🎉
-            </div>
-        </section>
-
-        <section>
-            <h2>فرم ثبت‌نام رسمی</h2>
-            <p style="font-size:1.3em; color:#555;"><strong>با پر کردن این فرم، شما به طور رسمی عضو گروه برادران ملش می‌شوید</strong></p>
+        <section class="register-section">
+            <h2 class="section-title">فرم ثبت‌نام رسمی</h2>
+            <p style="text-align:center; font-size:1.8rem; margin-bottom:60px;">با پر کردن این فرم شما به طور رسمی در گروه برادران ملش عضو می‌شوید</p>
             <form id="register-form">
                 <div class="form-group">
                     <label for="name">نام:</label>
@@ -207,58 +264,75 @@
                     <input type="date" id="birth" required>
                 </div>
                 <div class="form-group">
-                    <label for="sign">محل امضا (بنویسید: موافقم):</label>
-                    <input type="text" id="sign" required>
+                    <label for="sign">محل امضا:</label>
+                    <input type="text" id="sign" required placeholder="موافقم">
                 </div>
-                <div style="text-align: center;">
-                    <button type="submit">ثبت‌نام رسمی و دریافت کارت</button>
-                </div>
+                <button type="submit" class="submit-btn">ثبت‌نام و عضویت رسمی</button>
             </form>
         </section>
 
         <section>
-            <h2>نمونه کارت عضویت لوکس</h2>
-            <div class="membership-card">
-                <img src="https://static.vecteezy.com/system/resources/previews/054/705/569/non_2x/premium-golden-elegant-vip-card-template-modern-business-card-for-members-only-luxury-design-vector.jpg" alt="کارت عضویت طلایی">
-                <img src="https://www.rockdesign.com/cache/upload/template/i/6/675-450/crop/etched-mirror-finish-gold-metal-business-card-template-modern-luxury-elegant-aesthetic-horizontal-rockdesign-image-01.jpg" alt="کارت عضویت فلزی طلایی">
+            <h2 class="section-title">چاپ کارت عضویت</h2>
+            <p style="text-align:center; font-size:1.8rem; margin-bottom:60px;">چاپ کارت با طرح دلخواه شما پس از ثبت‌نام انجام می‌شود</p>
+            <div class="cards-gallery">
+                <img src="https://static.vecteezy.com/system/resources/previews/054/705/569/non_2x/premium-golden-elegant-vip-card-template-modern-business-card-for-members-only-luxury-design-vector.jpg" alt="کارت عضویت">
+                <img src="https://www.rockdesign.com/cache/upload/template/i/6/675-450/crop/etched-mirror-finish-gold-metal-business-card-template-modern-luxury-elegant-aesthetic-horizontal-rockdesign-image-01.jpg" alt="کارت عضویت لوکس">
             </div>
-            <p style="font-size:1.3em; text-align:center;">کارت با طرح دلخواه شما چاپ و تحویل خواهد شد.</p>
         </section>
 
-        <section>
-            <h2>آدرس کلاس</h2>
-            <div class="address">
-                <p><strong>آدرس:</strong> خیابان استاد شهریار، نرسیده به پارک داریوش، مدرسه شهید امیر اسدی، کلاس ۹۰۱</p>
-                <p><strong>مدیریت:</strong> ظهوریان</p>
-            </div>
+        <section class="contact-section">
+            <h2>تماس با ما</h2>
+            <p>برای اطلاعات بیشتر و هماهنگی با مدیریت، پس از ثبت‌نام با ما در ارتباط باشید.</p>
+            <p>ما همیشه آماده پاسخگویی به شما عزیزان هستیم.</p>
+        </section>
+
+        <section style="text-align:center; padding:80px 20px;">
+            <h2 class="section-title">آدرس کلاس</h2>
+            <p style="font-size:1.8rem;">
+                خیابان استاد شهریار، نرسیده به پارک داریوش<br>
+                مدرسه شهید امیر اسدی، کلاس ۹۰۱<br>
+                با مدیریت: ظهوریان
+            </p>
         </section>
 
         <footer>
-            <p>© ۱۴۰۴ - پکیج برادران ملش | موفقیت تضمینی با ما</p>
+            <p>© ۱۴۰۴ - پکیج برادران ملش | همه حقوق محفوظ است</p>
         </footer>
     </div>
 
-    <!-- پیام موفقیت لوکس -->
-    <div id="success-message">
-        <div class="success-box">
-            <h2>🎉 تبریک فراوان! 🎉</h2>
-            <p id="user-name" style="font-size:1.8em; font-weight:bold;"></p>
-            <p>ثبت‌نام شما با موفقیت انجام شد!</p>
-            <p>به خانواده بزرگ برادران ملش خوش آمدید 💎</p>
-            <p>کارت عضویت VIP شما به زودی آماده می‌شود.</p>
-            <button onclick="document.getElementById('success-message').style.display='none'" style="background:gold; color:#8b4513;">بستن و ادامه</button>
+    <div id="success-modal">
+        <div class="success-content">
+            <h2>🎉 تبریک!</h2>
+            <p id="user-name" style="font-size:3.5rem; margin:40px 0; color:var(--gold);"></p>
+            <p style="font-size:2.5rem;">ثبت‌نام شما با موفقیت انجام شد!</p>
+            <p style="font-size:2rem;">به گروه برادران ملش خوش آمدید 💪<br>کارت عضویت شما به زودی آماده می‌شود.</p>
+            <button onclick="document.getElementById('success-modal').style.display='none'" style="margin-top:50px; padding:20px 50px; font-size:1.8rem; background:var(--gold); color:#000; border:none; border-radius:35px; cursor:pointer;">
+                بستن
+            </button>
         </div>
     </div>
 
     <script>
-        document.getElementById('register-form').addEventListener('submit', function(e) {
+        const form = document.getElementById('register-form');
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const family = document.getElementById('family').value;
-            document.getElementById('user-name').textContent = name + ' ' + family + ' عزیز،';
-            document.getElementById('success-message').style.display = 'flex';
-            this.reset();
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const name = document.getElementById('name').value.trim();
+            const family = document.getElementById('family').value.trim();
+            document.getElementById('user-name').textContent = `\( {name} \){family} عزیز،`;
+
+            document.getElementById('success-modal').style.display = 'flex';
+
+            // جشن کنفتی حرفه‌ای
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+            setTimeout(() => confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 } }), 300);
+            setTimeout(() => confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 } }), 600);
+
+            form.reset();
         });
     </script>
 </body>
-</html>
+                    </html>
