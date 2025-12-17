@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="پکیج VIP برادران ملش - بهترین مشاوران کنکور برای رسیدن به نمره بالای ۱۸ و رتبه برتر. عضویت رایگان و کارت VIP لوکس!">
 <title>پکیج برادران ملش | VIP</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
@@ -10,45 +11,168 @@
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
 <style>
-/* تمام CSS قبلی رو اینجا بذار – ریسپانسیو، کارت لوکس، انیمیشن ارتباطات، pulse آیکون و ... همون قبلی */
-body{margin:0;font-family:Vazirmatn,sans-serif;background:linear-gradient(135deg,#0d001f,#1a0040);color:#fff}
+body{
+margin:0;
+font-family:Vazirmatn,sans-serif;
+background:linear-gradient(135deg,#0d001f,#1a0040);
+color:#fff
+}
 .container{max-width:1200px;margin:auto;padding:40px}
 h1{text-align:center;color:#ffd700;font-size:4rem}
-.logo{width:200px;margin:20px auto;display:block;border-radius:50%;box-shadow:0 0 20px rgba(255,215,0,.5)}
-.description{max-width:900px;margin:40px auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px;line-height:2;font-size:1.2rem;text-align:center}
+.logo{
+width:200px;
+margin:20px auto;
+display:block;
+border-radius:50%;
+box-shadow:0 0 20px rgba(255,215,0,.5)
+}
+.description{
+max-width:900px;
+margin:40px auto;
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:30px;
+line-height:2;
+font-size:1.2rem;
+text-align:center
+}
 .description h2{color:#ffd700;margin-bottom:20px}
 .highlight{color:#ffd700;font-weight:900;font-size:1.5rem}
-.tutors{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin:30px 0}
+.tutors{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin:30px 0
+}
 .tutor{text-align:center}
-.tutor img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #ffd700;box-shadow:0 0 15px rgba(255,215,0,.4)}
+.tutor img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #ffd700;
+box-shadow:0 0 15px rgba(255,215,0,.4)
+}
 .tutor p{margin:10px 0 0;font-weight:700}
 .sample-card{max-width:400px;margin:40px auto}
 .sample-card img{width:100%;border-radius:20px;box-shadow:0 0 30px rgba(255,215,0,.6)}
-form{max-width:600px;margin:auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px}
-input,button{width:100%;padding:18px;border-radius:20px;border:none;font-size:1.2rem;margin-top:20px}
+form{
+max-width:600px;
+margin:auto;
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:30px
+}
+input,button{
+width:100%;
+padding:18px;
+border-radius:20px;
+border:none;
+font-size:1.2rem;
+margin-top:20px
+}
 button{background:#ffd700;font-weight:900;cursor:pointer}
-.scene{width:360px;height:220px;margin:40px auto;perspective:1000px}
-.card{width:100%;height:100%;background-image:url('https://static.vecteezy.com/system/resources/previews/068/466/153/non_2x/luxurious-black-background-with-shiny-gold-geometric-angular-lines-luxury-premium-concept-design-can-use-element-certificate-gift-card-invitation-business-card-free-vector.jpg');background-size:cover;background-position:center;border-radius:20px;padding:20px;color:#fff;font-weight:900;transform-style:preserve-3d;transition:transform .3s ease;box-shadow:0 0 40px rgba(255,215,0,.9);position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(0,0,0,0.3),rgba(255,215,0,0.1));pointer-events:none;border-radius:20px}
-.card h3{margin:0;font-size:1.9rem;text-shadow:4px 4px 8px #000}
-.card p{margin:10px 0;font-size:1.5rem;text-shadow:3px 3px 6px #000}
-.card .member-id{position:absolute;top:15px;right:20px;font-size:1.1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px;text-shadow:2px 2px 4px #000}
-.card span{position:absolute;bottom:15px;left:20px;font-size:1.1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px;text-shadow:2px 2px 4px #000}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center;flex-direction:column;padding:20px}
-.modal-content{background:#111;padding:50px;border-radius:30px;text-align:center;width:90%;max-width:500px}
-#adminPanel{display:none;max-width:900px;margin:100px auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px}
-table{width:100%;border-collapse:collapse;margin-top:20px}
-th,td{border:1px solid #ffd700;padding:10px;text-align:center}
-.delete{color:red;cursor:pointer}
-.contacts{max-width:600px;margin:60px auto 40px;background:rgba(255,255,255,.08);padding:40px;border-radius:30px;text-align:center;font-size:1.2rem;opacity:0;transform:translateY(50px) scale(0.95);transition:all 1s ease-out}
+#modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px
+}
+.modal-content{
+background:#111;
+padding:50px;
+border-radius:30px;
+text-align:center;
+width:90%;
+max-width:500px
+}
+.card{
+width:380px;
+height:240px;
+background:linear-gradient(135deg, #ff0018, #ffa52c, #ffff41, #008018, #0000f9, #86007d);
+border-radius:20px;
+padding:30px;
+color:#fff;
+font-weight:900;
+box-shadow:0 0 40px rgba(255,255,255,.8);
+position:relative;
+overflow:hidden;
+margin:30px auto;
+}
+.card::before{
+content:'';
+position:absolute;
+top:0;left:0;right:0;bottom:0;
+background:linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.2));
+pointer-events:none;
+border-radius:20px;
+}
+.card h3{margin:0;font-size:2rem;text-shadow:2px 2px 6px #000}
+.card p{margin:12px 0;font-size:1.4rem;text-shadow:1px 1px 4px #000}
+.card .member-id{position:absolute;top:15px;right:20px;font-size:1.1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px}
+.card span{position:absolute;bottom:15px;left:20px;font-size:1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px}
+#adminPanel{
+display:none;
+max-width:900px;
+margin:100px auto;
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:30px
+}
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px
+}
+th,td{
+border:1px solid #ffd700;
+padding:10px;
+text-align:center
+}
+.contacts{
+max-width:600px;
+margin:60px auto 40px;
+background:rgba(255,255,255,.08);
+padding:40px;
+border-radius:30px;
+text-align:center;
+font-size:1.2rem;
+opacity:0;
+transform:translateY(50px) scale(0.95);
+transition:all 1s ease-out
+}
 .contacts.visible{opacity:1;transform:translateY(0) scale(1)}
 .contacts .telegram-icon{font-size:3rem;animation:pulse 2s infinite;margin-bottom:15px}
 .contacts a{color:#ffd700;text-decoration:none;font-weight:900;font-size:1.6rem;display:block;margin-top:15px;transition:transform 0.3s}
 .contacts a:hover{transform:scale(1.1)}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
-/* ریسپانسیو همون قبلی */
-@media (max-width:768px){ /* ... */ }
-@media (max-width:480px){ /* ... */ }
+@media (max-width:768px){
+.container{padding:20px}
+h1{font-size:2.8rem}
+.logo{width:150px}
+.description{padding:25px;font-size:1.1rem}
+.tutors{gap:20px}
+.tutor img{width:100px;height:100px}
+form{padding:25px}
+input,button{padding:15px;font-size:1.1rem}
+.card{width:320px;height:200px;padding:20px}
+.card h3{font-size:1.8rem}
+.card p{font-size:1.2rem}
+.modal-content{padding:30px}
+.contacts{padding:30px;margin:40px auto}
+.contacts .telegram-icon{font-size:2.5rem}
+.contacts a{font-size:1.4rem}
+}
+@media (max-width:480px){
+h1{font-size:2.3rem}
+.description{padding:20px;font-size:1rem}
+.card{width:280px;height:180px}
+}
 </style>
 </head>
 
@@ -57,7 +181,7 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 <div class="container">
 <h1>پکیج برادران ملش</h1>
 
-<img src="https://designshack.net/wp-content/uploads/Flying-Eagle-Luxury-Logo-Template.jpg" alt="لوگو" class="logo">
+<img src="https://img.freepik.com/free-vector/luxury-eagle-with-gold-color-logo-template_361591-404.jpg" alt="لوگو لوکس برادران ملش" class="logo">
 
 <div class="description">
 <h2>به خانواده بزرگ برادران ملش خوش آمدید 💎</h2>
@@ -65,15 +189,15 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 
 <div class="tutors">
 <div class="tutor">
-<img src="https://miro.medium.com/v2/resize:fit:1208/1*kyjHZrkrRiA-2TC-AXWm6A.jpeg" alt="دکتر ارمین علیزاده">
+<img src="https://media.istockphoto.com/id/1209164876/photo/portrait-of-young-persian-man-doctor-with-finger-on-lips.jpg?s=612x612&w=0&k=20&c=b07HsspVzQA7irQod5a08nDRfvLxms7YHG9x3OKRmzY=" alt="دکتر ارمین علیزاده">
 <p>دکتر ارمین علیزاده ⚕️</p>
 </div>
 <div class="tutor">
-<img src="http://www.pbs.org/wgbh/pages/frontline/tehranbureau/images/konkoor-89-18.jpg" alt="آیدین هیوه‌چی">
+<img src="https://tuck.dartmouth.edu/images/made/uploads/articles/emilio-rosillo_1660_1060_75_s_c1.jpg" alt="آیدین هیوه‌چی">
 <p>آیدین هیوه‌چی 🧠</p>
 </div>
 <div class="tutor">
-<img src="https://www.knowaboutiran.com/wp-content/uploads/2020/05/Konkoor-1024x628-1.jpg" alt="امیر علی لطفی">
+<img src="https://miro.medium.com/v2/resize:fill:1200:632/g:fp:0.5:0.33/1*cbfKy0kHoRTCGtjDkdgkvg.jpeg" alt="امیر علی لطفی">
 <p>امیر علی لطفی 🔥</p>
 </div>
 </div>
@@ -82,7 +206,7 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 <p>با ثبت‌نام زیر، کارت عضویت لوکس VIP دریافت کنید و به جمع دانش‌آموزان موفق ملش بپیوندید.</p>
 
 <div class="sample-card">
-<img src="https://www.rockdesign.com/cache/upload/template/k/d/1800-1200/crop/mattegoldmetal_dominic02.jpg" alt="نمونه کارت">
+<img src="https://thumbs.dreamstime.com/z/elevate-your-status-golden-vip-membership-card-exclusive-access-luxury-rewards-await-unleash-world-premium-privileges-377439113.jpg" alt="نمونه کارت عضویت لوکس VIP">
 </div>
 </div>
 
@@ -103,7 +227,7 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 <div id="modal">
 <div class="modal-content">
 <h2>🎉 کارت عضویت شما آماده شد!</h2>
-<div class="scene">
+
 <div class="card" id="card">
 <h3>VIP MEMBER</h3>
 <div class="member-id" id="memberId"></div>
@@ -112,7 +236,7 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 <p>برادران ملش</p>
 <span>@Otako_1389</span>
 </div>
-</div>
+
 <button onclick="downloadCard()">دانلود کارت (PNG)</button>
 <br><br>
 <button onclick="closeModal()">بستن</button>
@@ -127,7 +251,6 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 <th>#</th>
 <th>نام</th>
 <th>زمان ثبت</th>
-<th>حذف</th>
 </tr>
 </thead>
 <tbody id="members"></tbody>
@@ -141,23 +264,19 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 </div>
 
 <script>
-const SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyPxrGsmtexv6pH7gyVcuayNzqRBt5sFYWU-8IRAHjcE_bA6_1p2yzpre71zkkAmJmqwQ/exec";
-
 const form = document.getElementById("form");
 const modal = document.getElementById("modal");
 const cardName = document.getElementById("cardName");
 const joinDate = document.getElementById("joinDate");
 const memberId = document.getElementById("memberId");
 const card = document.getElementById("card");
-const scene = document.querySelector(".scene");
 const adminPanel = document.getElementById("adminPanel");
 const membersTbody = document.getElementById("members");
 const contactsSection = document.getElementById("contacts");
 
-let members = [];
-let currentMemberNumber = 1;
+let members = JSON.parse(localStorage.getItem("maleshMembers") || "[]");
+let currentMemberNumber = members.length + 1;
 
-// انیمیشن بخش ارتباطات
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
@@ -165,37 +284,18 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 observer.observe(contactsSection);
 
-// بارگذاری اعضا
-async function loadMembers() {
-    try {
-        const response = await fetch(SHEET_WEB_APP_URL + "?action=get");
-        if (!response.ok) throw new Error();
-        const data = await response.json();
-        members = data;
-        currentMemberNumber = members.length + 1;
-        renderMembers();
-    } catch (e) {
-        console.error("خطا در بارگذاری");
-        members = [];
-    }
+function saveMembers() {
+    localStorage.setItem("maleshMembers", JSON.stringify(members));
 }
 
-// ذخیره عضو جدید
-async function saveMember(user) {
-    try {
-        const formData = new FormData();
-        formData.append("action", "add");
-        formData.append("name", user.name);
-        formData.append("time", user.time);
-        await fetch(SHEET_WEB_APP_URL, {method: "POST", body: formData});
-        loadMembers();
-    } catch (e) {
-        console.error("خطا در ذخیره");
-    }
+function renderMembers() {
+    membersTbody.innerHTML = "";
+    members.forEach((m, i) => {
+        membersTbody.innerHTML += `<tr><td>\( {i + 1}</td><td> \){m.name}</td><td>${m.time}</td></tr>`;
+    });
 }
 
-// ثبت نام
-form.addEventListener("submit", async e => {
+form.addEventListener("submit", e => {
     e.preventDefault();
     const fullName = document.getElementById("name").value.trim() + " " + document.getElementById("family").value.trim();
     const timeNow = new Date().toLocaleString("fa-IR");
@@ -205,35 +305,40 @@ form.addEventListener("submit", async e => {
     memberId.textContent = "کد عضویت: " + ("000" + currentMemberNumber).slice(-4);
 
     modal.style.display = "flex";
-    confetti({particleCount: 200, spread: 90, origin: { y: 0.6 }});
+    confetti({particleCount: 300, spread: 100, colors: ['#ff0018', '#ffa52c', '#ffff41', '#008018', '#0000f9', '#86007d']});
 
-    await saveMember({name: fullName, time: timeNow});
+    members.push({name: fullName, time: timeNow});
+    saveMembers();
+    currentMemberNumber++;
+    renderMembers();
 
     form.reset();
 });
 
-// نمایش اعضا
-function renderMembers() {
-    membersTbody.innerHTML = "";
-    members.forEach((m, i) => {
-        membersTbody.innerHTML += `<tr><td>\( {i + 1}</td><td> \){m.name}</td><td>${m.time}</td><td>—</td></tr>`;
-    });
-}
-
-// پنل مدیریت
 function showAdminPrompt() {
     const pass = prompt("رمز پنل مدیریت را وارد کنید:");
-    if (pass === "mrk1389mrk") {
+    if (pass === "BaradaranMalesh1404VIP") {  // رمز قوی‌تر - خودت تغییر بده
         adminPanel.style.display = "block";
-        loadMembers();
+        renderMembers();
     } else if (pass !== null) {
         alert("رمز اشتباه است!");
     }
 }
 
-// افکت 3D (دسکتاپ و موبایل) و دانلود کارت همون قبلی
+function downloadCard() {
+    html2canvas(card, {scale: 3}).then(canvas => {
+        const a = document.createElement("a");
+        a.download = "BaradaranMalesh_VIP_Card_" + ("000" + (currentMemberNumber - 1)).slice(-4) + ".png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+    });
+}
 
-loadMembers();
+function closeModal() {
+    modal.style.display = "none";
+}
+
+renderMembers();  // بارگذاری اولیه لیست
 </script>
 
 </body>
