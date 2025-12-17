@@ -115,7 +115,6 @@ border-radius:20px;
 .card h3{margin:0;font-size:2rem;text-shadow:2px 2px 6px #000}
 .card p{margin:12px 0;font-size:1.4rem;text-shadow:1px 1px 4px #000}
 .card .member-id{position:absolute;top:15px;right:20px;font-size:1.1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px}
-.card span{position:absolute;bottom:15px;left:20px;font-size:1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px}
 #adminPanel{
 display:none;
 max-width:900px;
@@ -220,8 +219,8 @@ h1{font-size:2.3rem}
 <div class="contacts" id="contacts">
 <div class="telegram-icon">✈️</div>
 <p>برای دریافت مشاوره فوری، برنامه‌های اختصاصی و محتوای VIP</p>
-<p>به تلگرام برادران ملش بپیوندید:</p>
-<a href="https://t.me/Otako_1389" target="_blank">@Otako_1389</a>
+<p>به کانال تلگرام برادران ملش بپیوندید:</p>
+<a href="https://t.me/baradaran_malesh" target="_blank">t.me/baradaran_malesh</a>
 </div>
 
 <div id="modal">
@@ -234,7 +233,6 @@ h1{font-size:2.3rem}
 <p id="cardName"></p>
 <p id="joinDate"></p>
 <p>برادران ملش</p>
-<span>@Otako_1389</span>
 </div>
 
 <button onclick="downloadCard()">دانلود کارت (PNG)</button>
@@ -291,7 +289,13 @@ function saveMembers() {
 function renderMembers() {
     membersTbody.innerHTML = "";
     members.forEach((m, i) => {
-        membersTbody.innerHTML += `<tr><td>\( {i + 1}</td><td> \){m.name}</td><td>${m.time}</td></tr>`;
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${i + 1}</td>
+            <td>${m.name}</td>
+            <td>${m.time}</td>
+        `;
+        membersTbody.appendChild(row);
     });
 }
 
@@ -317,7 +321,7 @@ form.addEventListener("submit", e => {
 
 function showAdminPrompt() {
     const pass = prompt("رمز پنل مدیریت را وارد کنید:");
-    if (pass === "BaradaranMalesh1404VIP") {  // رمز قوی‌تر - خودت تغییر بده
+    if (pass === "BaradaranMalesh1404VIP") {  // رمز رو خودت بعداً تغییر بده
         adminPanel.style.display = "block";
         renderMembers();
     } else if (pass !== null) {
