@@ -12,40 +12,40 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-body{margin:0;font-family:Vazirmatn,sans-serif;background:linear-gradient(135deg,#0d001f,#1a0040);color:#fff}
-.container{max-width:1200px;margin:auto;padding:40px}
-h1{text-align:center;color:#ffd700;font-size:4rem}
-.logo{width:200px;margin:20px auto;display:block;border-radius:50%;box-shadow:0 0 20px rgba(255,215,0,.5)}
-.description{max-width:900px;margin:40px auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px;line-height:2;font-size:1.2rem;text-align:center}
-.description h2{color:#ffd700;margin-bottom:20px}
-.highlight{color:#ffd700;font-weight:900;font-size:1.5rem}
-.tutors{display:flex;justify-content:center;flex-wrap:wrap;gap:30px;margin:30px 0}
-.tutor{text-align:center}
-.tutor img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #ffd700;box-shadow:0 0 15px rgba(255,215,0,.4)}
-.tutor p{margin:10px 0 0;font-weight:700}
-.sample-card{max-width:400px;margin:40px auto}
-.sample-card img{width:100%;border-radius:20px;box-shadow:0 0 30px rgba(255,215,0,.6)}
-form{max-width:600px;margin:auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px}
-input,button{width:100%;padding:18px;border-radius:20px;border:none;font-size:1.2rem;margin-top:20px}
-button{background:#ffd700;font-weight:900;cursor:pointer}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center;flex-direction:column;padding:20px}
-.modal-content{background:#111;padding:50px;border-radius:30px;text-align:center;width:90%;max-width:500px}
-.card{width:380px;height:240px;background:linear-gradient(135deg,#ff0018,#ffa52c,#ffff41,#008018,#0000f9,#86007d);border-radius:20px;padding:30px;color:#fff;font-weight:900;box-shadow:0 0 40px rgba(255,255,255,.8);position:relative;overflow:hidden;margin:30px auto}
-.card::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,0.1),rgba(0,0,0,0.2));pointer-events:none;border-radius:20px}
-.card h3{margin:0;font-size:2rem;text-shadow:2px 2px 6px #000}
-.card p{margin:12px 0;font-size:1.4rem;text-shadow:1px 1px 4px #000}
-.card .member-id{position:absolute;top:15px;right:20px;font-size:1.1rem;background:rgba(0,0,0,0.6);padding:8px 15px;border-radius:12px}
-#adminPanel{display:none;max-width:900px;margin:100px auto;background:rgba(255,255,255,.08);padding:40px;border-radius:30px}
-table{width:100%;border-collapse:collapse;margin-top:20px}
-th,td{border:1px solid #ffd700;padding:10px;text-align:center}
-.contacts{max-width:600px;margin:60px auto 40px;background:rgba(255,255,255,.08);padding:40px;border-radius:30px;text-align:center;font-size:1.2rem;opacity:0;transform:translateY(50px) scale(0.95);transition:all 1s ease-out}
-.contacts.visible{opacity:1;transform:translateY(0) scale(1)}
-.contacts .telegram-icon{font-size:3rem;animation:pulse 2s infinite;margin-bottom:15px}
-.contacts a{color:#ffd700;text-decoration:none;font-weight:900;font-size:1.6rem;display:block;margin-top:15px;transition:transform 0.3s}
-.contacts a:hover{transform:scale(1.1)}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
-@media (max-width:768px){.container{padding:20px}h1{font-size:2.8rem}.logo{width:150px}.description{padding:25px;font-size:1.1rem}.tutors{gap:20px}.tutor img{width:100px;height:100px}form{padding:25px}input,button{padding:15px;font-size:1.1rem}.card{width:320px;height:200px;padding:20px}.card h3{font-size:1.8rem}.card p{font-size:1.2rem}.modal-content{padding:30px}.contacts{padding:30px;margin:40px auto}.contacts .telegram-icon{font-size:2.5rem}.contacts a{font-size:1.4rem}}
-@media (max-width:480px){h1{font-size:2.3rem}.description{padding:20px;font-size:1rem}.card{width:280px;height:180px}}
+body { margin: 0; font-family: Vazirmatn, sans-serif; background: linear-gradient(135deg, #f0f4f8, #d9e2ec); color: #333; }
+.container { max-width: 1200px; margin: auto; padding: 40px; }
+h1 { text-align: center; color: #007bff; font-size: 4rem; }
+.logo { width: 200px; margin: 20px auto; display: block; border-radius: 50%; box-shadow: 0 0 20px rgba(0, 123, 255, 0.3); }
+.description { max-width: 900px; margin: 40px auto; background: rgba(255, 255, 255, 0.8); padding: 40px; border-radius: 30px; line-height: 2; font-size: 1.2rem; text-align: center; }
+.description h2 { color: #007bff; margin-bottom: 20px; }
+.highlight { color: #28a745; font-weight: 900; font-size: 1.5rem; }
+.tutors { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 30px 0; }
+.tutor { text-align: center; }
+.tutor img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #007bff; box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); }
+.tutor p { margin: 10px 0 0; font-weight: 700; }
+.sample-card { max-width: 400px; margin: 40px auto; }
+.sample-card img { width: 100%; border-radius: 20px; box-shadow: 0 0 30px rgba(0, 123, 255, 0.4); }
+form { max-width: 600px; margin: auto; background: rgba(255, 255, 255, 0.8); padding: 40px; border-radius: 30px; }
+input, button { width: 100%; padding: 18px; border-radius: 20px; border: none; font-size: 1.2rem; margin-top: 20px; }
+button { background: #28a745; color: #fff; font-weight: 900; cursor: pointer; }
+#modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; flex-direction: column; padding: 20px; }
+.modal-content { background: #fff; padding: 50px; border-radius: 30px; text-align: center; width: 90%; max-width: 500px; color: #333; }
+.card { width: 380px; height: 240px; background: linear-gradient(135deg, #007bff, #6610f2, #6f42c1); border-radius: 20px; padding: 30px; color: #fff; font-weight: 900; box-shadow: 0 0 40px rgba(255, 255, 255, 0.8); position: relative; overflow: hidden; margin: 30px auto; }
+.card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)); pointer-events: none; border-radius: 20px; }
+.card h3 { margin: 0; font-size: 2rem; text-shadow: 2px 2px 6px #000; }
+.card p { margin: 12px 0; font-size: 1.4rem; text-shadow: 1px 1px 4px #000; }
+.card .member-id { position: absolute; top: 15px; right: 20px; font-size: 1.1rem; background: rgba(0, 0, 0, 0.6); padding: 8px 15px; border-radius: 12px; }
+#adminPanel { display: none; max-width: 900px; margin: 100px auto; background: rgba(255, 255, 255, 0.8); padding: 40px; border-radius: 30px; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #007bff; padding: 10px; text-align: center; }
+.contacts { max-width: 600px; margin: 60px auto 40px; background: rgba(255, 255, 255, 0.8); padding: 40px; border-radius: 30px; text-align: center; font-size: 1.2rem; opacity: 0; transform: translateY(50px) scale(0.95); transition: all 1s ease-out; }
+.contacts.visible { opacity: 1; transform: translateY(0) scale(1); }
+.contacts .telegram-icon { font-size: 3rem; animation: pulse 2s infinite; margin-bottom: 15px; }
+.contacts a { color: #007bff; text-decoration: none; font-weight: 900; font-size: 1.6rem; display: block; margin-top: 15px; transition: transform 0.3s; }
+.contacts a:hover { transform: scale(1.1); }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+@media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2.8rem; } .logo { width: 150px; } .description { padding: 25px; font-size: 1.1rem; } .tutors { gap: 20px; } .tutor img { width: 100px; height: 100px; } form { padding: 25px; } input, button { padding: 15px; font-size: 1.1rem; } .card { width: 320px; height: 200px; padding: 20px; } .card h3 { font-size: 1.8rem; } .card p { font-size: 1.2rem; } .modal-content { padding: 30px; } .contacts { padding: 30px; margin: 40px auto; } .contacts .telegram-icon { font-size: 2.5rem; } .contacts a { font-size: 1.4rem; } }
+@media (max-width: 480px) { h1 { font-size: 2.3rem; } .description { padding: 20px; font-size: 1rem; } .card { width: 280px; height: 180px; } }
 </style>
 </head>
 
@@ -130,7 +130,7 @@ th,td{border:1px solid #ffd700;padding:10px;text-align:center}
 </div>
 
 <div class="container" style="text-align:center; margin-top:50px;">
-<button onclick="showAdminPrompt()" style="background:none; border:none; color:#ffd700; font-size:0.9rem; cursor:pointer;">
+<button onclick="showAdminPrompt()" style="background:none; border:none; color:#007bff; font-size:0.9rem; cursor:pointer;">
 ⚙️ ورود مدیریت
 </button>
 </div>
@@ -152,7 +152,6 @@ const membersTbody = document.getElementById("members");
 const contactsSection = document.getElementById("contacts");
 
 let members = [];
-let memberCount = 0;
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -173,7 +172,6 @@ async function loadMembers() {
     }
 
     members = data || [];
-    memberCount = members.length;
     renderMembers();
 }
 
@@ -191,26 +189,42 @@ form.addEventListener("submit", async e => {
     const fullName = document.getElementById("name").value.trim() + " " + document.getElementById("family").value.trim();
     const timeNow = new Date().toLocaleString("fa-IR");
 
-    memberCount += 1; // شماره بعدی
+    // ابتدا تعداد فعلی رو بگیر برای جلوگیری از race condition نسبی
+    const { count: currentCount, error: countError } = await supabase
+        .from('members')
+        .select('id', { count: 'exact', head: true });
+
+    if (countError) {
+        console.error("خطا در شمارش اعضا:", countError);
+        alert("خطایی رخ داد، دوباره امتحان کنید.");
+        return;
+    }
+
+    const nextMemberId = currentCount + 1;
+
+    // حالا insert کن و returning بگیر (فرض بر وجود column id auto-increment)
+    const { data, error } = await supabase
+        .from('members')
+        .insert({ name: fullName, time: timeNow })
+        .select();
+
+    if (error || !data || data.length === 0) {
+        console.error("خطا در ذخیره:", error);
+        alert("خطایی رخ داد، دوباره امتحان کنید.");
+        return;
+    }
+
+    // استفاده از id برگشتی از دیتابیس (فرض بر وجود id)
+    const insertedId = data[0].id; // اگر table column id داشته باشه
 
     cardName.textContent = fullName;
     joinDate.textContent = "تاریخ عضویت: " + timeNow;
-    memberId.textContent = "کد عضویت: " + ("000" + memberCount).slice(-4);
+    memberId.textContent = "کد عضویت: " + ("000" + insertedId).slice(-4);
 
     modal.style.display = "flex";
-    confetti({particleCount: 300, spread: 100, colors: ['#ff0018', '#ffa52c', '#ffff41', '#008018', '#0000f9', '#86007d']});
+    confetti({ particleCount: 300, spread: 100, colors: ['#007bff', '#6610f2', '#6f42c1', '#28a745'] });
 
-    const { error } = await supabase
-        .from('members')
-        .insert({ name: fullName, time: timeNow });
-
-    if (error) {
-        console.error("خطا در ذخیره:", error);
-        alert("خطایی رخ داد، دوباره امتحان کنید.");
-        memberCount -= 1; // اگر خطا داد، شماره رو برگردون
-    } else {
-        await loadMembers(); // لیست رو بروز کن
-    }
+    await loadMembers(); // لیست رو بروز کن
 
     form.reset();
 });
@@ -226,9 +240,9 @@ function showAdminPrompt() {
 }
 
 function downloadCard() {
-    html2canvas(card, {scale: 3}).then(canvas => {
+    html2canvas(document.getElementById("card"), {scale: 3}).then(canvas => {
         const a = document.createElement("a");
-        a.download = "BaradaranMalesh_VIP_Card_" + ("000" + memberCount).slice(-4) + ".png";
+        a.download = "BaradaranMalesh_VIP_Card_" + memberId.textContent.split(": ")[1] + ".png";
         a.href = canvas.toDataURL("image/png");
         a.click();
     });
