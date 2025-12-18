@@ -226,7 +226,7 @@ function showAdminPrompt() {
 }
 
 function downloadCard() {
-    html2canvas(card.querySelector('.card'), {scale: 3}).then(canvas => {
+    html2canvas(card, {scale: 3}).then(canvas => {
         const a = document.createElement("a");
         a.download = "BaradaranMalesh_VIP_Card_" + ("000" + memberCount).slice(-4) + ".png";
         a.href = canvas.toDataURL("image/png");
@@ -243,4 +243,4 @@ loadMembers();
 </script>
 
 </body>
-    </html>
+  </html>
